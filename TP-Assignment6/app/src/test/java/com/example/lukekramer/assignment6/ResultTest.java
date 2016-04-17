@@ -1,10 +1,10 @@
 package com.example.lukekramer.assignment6;
 
-import com.example.lukekramer.assignment6.entity.Person;
-import com.example.lukekramer.assignment6.domain.client.Clientfactory;
-import com.example.lukekramer.assignment6.domain.result.TransactionResultfactory;
 import com.example.lukekramer.assignment6.chain.ClientChainSetup;
 import com.example.lukekramer.assignment6.chain.LoanChainSetup;
+import com.example.lukekramer.assignment6.domain.client.Clientfactory;
+import com.example.lukekramer.assignment6.domain.result.TransactionResultfactory;
+import com.example.lukekramer.assignment6.entity.Person;
 import com.example.lukekramer.assignment6.entity.Result;
 
 import junit.framework.Assert;
@@ -35,7 +35,10 @@ public class ResultTest {
 
 
         TransactionResultfactory transaction = new TransactionResultfactory();
-        Result event = transaction.getResult(person.getId(),result);
+        Result event = transaction.getResult(1,person.getId(),result);
+
+
+        Assert.assertEquals(person.getId(),event.getClientid());
 
         Date date = new Date();
         System.out.println(event.getStatus());

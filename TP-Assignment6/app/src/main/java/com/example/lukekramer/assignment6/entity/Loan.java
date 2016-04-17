@@ -7,11 +7,15 @@ import java.io.Serializable;
  */
 public class Loan implements Serializable{
 
-
+    private long id;
     private long maxAmount;
     private long minAmount;
 
     private Loan(){}
+
+    public long getId() {
+        return id;
+    }
 
     public long getMaxAmount() {
         return maxAmount;
@@ -32,6 +36,7 @@ public class Loan implements Serializable{
 
     public Loan(Builder Build)
     {
+        this.id = Build.id;
         this.maxAmount = Build.maxAmount;
         this.minAmount = Build.minAmount;
 
@@ -39,9 +44,15 @@ public class Loan implements Serializable{
 
     public static class Builder
     {
+        private long id;
         private long maxAmount;
         private long minAmount;
 
+        public Builder ID(long value)
+        {
+            this.id = value;
+            return this;
+        }
         public Builder maxLoanAmount(long value)
         {
             this.maxAmount = value;
@@ -56,6 +67,7 @@ public class Loan implements Serializable{
 
         public Builder copy(Loan value)
         {
+
             this.maxAmount = value.maxAmount;
             this.minAmount = value.minAmount;
 

@@ -7,5 +7,5 @@ import com.example.lukekramer.assignment6.entity.Result;
  */
 public interface CreateResult {
 
-    Result getResult(long id,String status);
+    Result getResult(long id,long clientid,String status);
 }

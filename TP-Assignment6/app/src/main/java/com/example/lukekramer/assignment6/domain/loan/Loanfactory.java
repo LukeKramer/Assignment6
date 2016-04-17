@@ -11,6 +11,7 @@ public class Loanfactory implements CreateLoan {
     public Loan getLoan() {
 
         Loan loan = new Loan.Builder()
+                .ID(1)
                 .maxLoanAmount(100000)
                 .minLoanAmount(1000)
                 .build();

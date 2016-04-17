@@ -11,10 +11,10 @@ import java.util.Date;
 public class TransactionResultfactory implements CreateResult {
 
     @Override
-    public Result getResult(long id, String status) {
+    public Result getResult(long id,long clientid, String status) {
 
         Result result = new Result.Builder()
-                .ID(id).Status(status)
+                .ID(id).Status(status).ClientID(clientid)
                 .Date(new Date())
                 .Build();
         return result;

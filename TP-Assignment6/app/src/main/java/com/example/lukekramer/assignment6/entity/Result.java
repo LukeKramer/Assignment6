@@ -9,6 +9,7 @@ import java.util.Date;
 public class Result implements Serializable {
 
     private long id;
+    private long clientid;
     private String status;
     private Date date;
 
@@ -16,6 +17,10 @@ public class Result implements Serializable {
 
     public long getId() {
         return id;
+    }
+
+    public long getClientid() {
+        return clientid;
     }
 
     public String getStatus() {
@@ -29,6 +34,7 @@ public class Result implements Serializable {
     public Result(Builder Builder)
     {
         this.id = Builder.id;
+        this.clientid=Builder.clientid;
         this.status = Builder.status;
         this.date = Builder.date;
     }
@@ -36,12 +42,19 @@ public class Result implements Serializable {
     public static class Builder{
 
         private long id;
+        private long clientid;
         private String status;
         private Date date;
 
         public Builder ID(long value)
         {
             this.id = value;
+            return this;
+        }
+
+        public Builder ClientID(long value)
+        {
+            this.clientid = value;
             return this;
         }
 
